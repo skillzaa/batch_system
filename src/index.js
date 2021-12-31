@@ -1,7 +1,8 @@
 import AgfObject from "./afgobject.js";
 import Batch from "./batch.js";
 console.log("modules loaded...");
-let batch = new Batch();
+
+let batch = new Batch(batch_completed);
 
 let afg_one  = new AgfObject("afg_one");
 afg_one.target_data = 20;
@@ -15,18 +16,13 @@ batch.push(afg_two);
 batch.push(afg_three);
 
 let interval = setInterval(()=>{
-    
-    if (batch.completed == true){
-        console.clear();
-        // clearInterval(interval);
-        ci();
-        console.log("batch completed");
-    }else {
-        batch.run();
-    }
+batch.check_completion();    
+batch.run();    
 },200);
-function ci(){
+
+function batch_completed(){
     clearInterval(interval);
+    console.log("batch completed");
 }
 
 

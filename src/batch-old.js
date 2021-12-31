@@ -3,10 +3,10 @@
 // but on completion it has to call a callback
 
 export default class Batch {
-constructor(callback){    
+constructor(){    
 this.agfs = [];
 this.completed = false;
-this.callback = callback;
+this.callback = null;
 }
 push(agf){
 agf.callback = this.callback;    
