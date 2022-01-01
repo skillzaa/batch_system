@@ -4,12 +4,13 @@ import generate_batches from "./batch_generator.js";
 import {view_state} from "../app_jsons/view_state.js"
 
 export default class Framework {
-constructor(){
+constructor(callback){
+this.batch_completed_callback = callback;    
 this.view_state = view_state; // now we dont use the file view_state rather this one in memory.    
 this.drawengine = new DrawEngine();
 this.drawengine.generate_components();
 
-this.batches = generate_batches(this.view_state,this.drawengine.components,this.batch_completed);
+this.batches = generate_batches(this.view_state,this.drawengine.components,this.batch_completed_callback);
 //this.match_agfs_to_comps();
 this.running_batch = 0;
 //this.gameloop = gameloop;
@@ -25,10 +26,5 @@ this.drawengine.components.forEach(component => {
     });
 });
 }
-batch_completed(){
-    this.running_batch += 1;
-    if (this.running_batch >= this.batches.length){
-        // clearInterval(drawloop);
-    }
-    }
+
 }

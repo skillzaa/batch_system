@@ -29,11 +29,9 @@ let final = true;
         }
     });
     if(final == true){
-        return true;
         this.callback();
     }
 this.completed = final;
-return false;    
 }
 // callback(){
 // console.log("the callback have been called....");
