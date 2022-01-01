@@ -20,7 +20,7 @@ generate_conponents(){
     });
 }
 draw_app(){
-
+///- draw engine components and the batch data HAS TO BE RE-CONSILED OUT OF BOTH OBJECTS in framework, that is what framework is for
     // this.rect.x = view_state.rect.x;
     // this.rect.y = view_state.rect.y;
    console.clear();

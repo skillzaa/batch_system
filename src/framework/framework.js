@@ -22,6 +22,6 @@ batch_completed(){
     this.running_batch += 1;
     if (this.running_batch >= this.batches.length){
         // clearInterval(drawloop);
-}
-}
+    }
+    }
 }

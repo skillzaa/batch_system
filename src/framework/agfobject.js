@@ -20,6 +20,9 @@ this.component_target = item.component_target;
                if (component.name == this.component_name){
                 component[this.component_target]
                 = this.current_data;
+
+                //===>experimental
+                
                }
                 //------------------------------
             });

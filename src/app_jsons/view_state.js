@@ -25,8 +25,8 @@ batches : [
                 {
                     name:"move_rect_one_x",
                     begin_data:0,
-                    final_data:100,
-                    increment:1,
+                    final_data:1000,
+                    increment:10,
                     necessary : true,
                     component_target:"x",
                     component_name : "rect_one"
