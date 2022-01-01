@@ -7,6 +7,7 @@ constructor(callback){
 this.agfs = [];
 this.completed = false;
 this.callback = callback;
+this.status = "unknown for now";
 }
 push(agf){
 agf.callback = this.callback;    
@@ -25,7 +26,6 @@ this.check_completion();
 check_completion(){
 let final = true;    
     this.agfs.forEach((agf) => {
-
         if (agf.necessary == true && agf.completed == false){
             final = false;
         }
