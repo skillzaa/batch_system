@@ -15,8 +15,9 @@ this.agfs.push(agf);
 run(){
     console.clear();
     this.agfs.forEach((agf) => {
-        let v = agf.perform();
-        console.log(agf.name,agf.perform(),"completed",agf.completed);
+        if (agf.completed == false){
+        agf.run();
+        }
     });
 this.check_completion();    
 }

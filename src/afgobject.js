@@ -8,13 +8,15 @@ this.target_data = target_data;
 this.increment = increment; 
 this.necessary = necessary;
 this.completed = false;
+this.pointer = null;
+this.pointer_target = null;
 }
-    perform(){
+    run(){
         if (this.current_data < this.target_data){
             this.current_data += this.increment;
-            return this.current_data;
+            this.pointer[this.pointer_target] = this.current_data
         }else {
             this.completed = true;
         }
-}
+    }
 }
