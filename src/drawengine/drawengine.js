@@ -1,30 +1,32 @@
+import {view_state} from "../app_jsons/view_state.js";
 
 export default class DrawEngine {
-constructor(view_state,width=800,height=600){
+constructor(width=800,height=600){
     this.view_state = view_state;
     this.app = new PIXI.Application({ 
-    width: 640, height: 360 
+    width: 640, 
+    height: 360 
             });
+this.components = this.generate_components();
 document.body.appendChild(this.app.view);
 return true;
 }
-generate_conponents(){
+generate_components(){
     this.components = [];
-    let components_data = this.view_state.components;
-    components_data.forEach((component)=>{
+    let state_components_data = view_state.components;
+    state_components_data.forEach((state_component)=>{
         //------------------------------
-        let r = rectangle(component);
-        this.app.stage.addChild(r);
+        let r = {};
+        r.name = state_component.name;
+        r.comp = rectangle(state_component);
+        this.app.stage.addChild(r.comp);
         this.components.push(r);
         //------------------------------
     });
 }
 draw_app(){
-///- draw engine components and the batch data HAS TO BE RE-CONSILED OUT OF BOTH OBJECTS in framework, that is what framework is for
-    // this.rect.x = view_state.rect.x;
-    // this.rect.y = view_state.rect.y;
-   console.clear();
-    console.dir(JSON.stringify(this.view_state.components));
+//    console.clear();
+//     console.dir(JSON.stringify(this.components));
 }
 
     get_sprite(path="./assets/branch.png"){
