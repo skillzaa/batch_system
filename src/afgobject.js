@@ -1,6 +1,6 @@
 
 export default class AgfObject{
-constructor(name="AgfObject",begin_data=0,target_data=1000,increment=1,necessary=true){
+constructor(name="AgfObject",begin_data=0,target_data=100,increment=1,necessary=true){
 this.name = name; 
 this.begin_data = begin_data; 
 this.current_data = begin_data; //its not a mistake

@@ -1,9 +1,11 @@
 import generate_batch from "../batch_generator.js";
+import {view_state} from "../app_jsons/view_state.js";
 
 let items_data = [
-    {name:"afg_one",target_data:15,pointer_target:"ddd"},
-    {name:"afg_two",target_data:25,pointer_target:"eee"},
-    {name:"afg_three",target_data:35,pointer_target:"fff"}
+    {
+        name:"rect y",target_data:100,pointer_target:"y",
+        pointer : view_state.rect
+    }
     ];
 
 export default function get_second_demo_batch(batch_completed){

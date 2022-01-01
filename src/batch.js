@@ -1,6 +1,3 @@
-//Batch is a collection of agfs. 
-// batch check the completed value of each of its items 
-// but on completion it has to call a callback
 
 export default class Batch {
 constructor(callback){    
@@ -14,7 +11,7 @@ agf.callback = this.callback;
 this.agfs.push(agf);
 }
 run(){
-    console.clear();
+    // console.clear();
     this.agfs.forEach((agf) => {
         if (agf.completed == false){
         agf.run();
