@@ -4,6 +4,7 @@
   "description": "A thin wrapper for pixijs",
   "main": "index.js",
   "dependencies": {
+    "jslint": "^0.12.1",
     "pixi.js": "^5.3.11"
   },
   "devDependencies": {

@@ -1,8 +1,7 @@
-import {view_state} from "../app_jsons/view_state.js";
-
 
 export default class DrawEngine {
-constructor(width=800,height=600){
+constructor(view_state,width=800,height=600){
+    this.view_state = view_state;
     this.app = new PIXI.Application({ 
     width: 640, height: 360 
             });
@@ -11,7 +10,7 @@ return true;
 }
 generate_conponents(){
     this.components = [];
-    let components_data = view_state.components;
+    let components_data = this.view_state.components;
     components_data.forEach((component)=>{
         //------------------------------
         let r = rectangle(component);
@@ -25,7 +24,7 @@ draw_app(){
     // this.rect.x = view_state.rect.x;
     // this.rect.y = view_state.rect.y;
    console.clear();
-    console.dir(JSON.stringify(view_state));
+    console.dir(JSON.stringify(this.view_state.components));
 }
 
     get_sprite(path="./assets/branch.png"){

@@ -1,6 +1,7 @@
 
 export default class Batch {
-constructor(callback){    
+constructor(view_state,callback){    
+this.view_state = view_state;
 this.agfs = [];
 this.completed = false;
 this.callback = callback;
@@ -14,7 +15,7 @@ run(){
     // console.clear();
     this.agfs.forEach((agf) => {
         if (agf.completed == false){
-        agf.run();
+        agf.run(this.view_state);
         }
     });
 this.check_completion();    
@@ -29,7 +30,7 @@ let final = true;
     });
     if(final == true){
         return true;
-        // this.callback();
+        this.callback();
     }
 this.completed = final;
 return false;    
