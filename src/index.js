@@ -2,7 +2,7 @@ import Wiz from "./wiz/wiz.js";
 
 let wiz= new Wiz();
 console.log("wiz",wiz);
-
+let batch_number = 1;
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 let i = setInterval(()=>{
@@ -30,12 +30,18 @@ let i = setInterval(()=>{
        elapsed += delta;
        sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
 
-       components.forEach(c =>{
+    components.forEach(c =>{
         c.comp.y += 1;
-        //--there r 3 items in component struct
-        // the comp is actual pixi component 
-        //app.stage.addChild(c.comp);
-     });
+    });
+    
+    components.forEach(component =>{
+        component.agfs.forEach(agf =>{
+            if (agf.batch_number == batch_number){
+                let u = agf.run();
+                component.comp[agf.component_target] = u;
+            }
+        });
+    });
 
 
 
