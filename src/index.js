@@ -1,34 +1,43 @@
-import Framework from "./framework/framework.js";
+import Wiz from "./wiz/wiz.js";
 
-let framework = new Framework(batch_completed_callback);
-framework.match_agfs_to_comps();
-console.log(framework);
-let current_batch = 0;
+let wiz= new Wiz();
+console.log("wiz",wiz);
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 let i = setInterval(()=>{
-    if (current_batch <= framework.batches.length){
-    // update the batch
-    framework.batches[current_batch].run();       
-   // framework.drawengine.draw_app();   
-    }else {
-        clearInterval(i);
-    }
-    
-// console.clear();
-   let current_agfs = framework.batches[current_batch].agfs;  
-   current_agfs.forEach( agf => {
-        console.log(agf);
-    });
-
+    wiz.update(1);
    //-------------------------------------
 },100);
 
-function batch_completed_callback(){
-    console.log("batch_completed");
-    if (current_batch <= framework.batches.length){
-        current_batch += 1;
-    }else {
-        clearInterval(i);   
-        console.log("interval cleared");
-    }     
-}
+     // Create the application helper and add its render target to the page
+     let app = wiz.app;
+     document.body.appendChild(app.view);
+
+     // Create the sprite and add it to the stage
+     let sprite = PIXI.Sprite.from('/assets/branch.png');
+     app.stage.addChild(sprite);
+     let components = wiz.components;
+     components.forEach(c =>{
+        //--there r 3 items in component struct
+        // the comp is actual pixi component 
+        app.stage.addChild(c.comp);
+     });
+
+     // Add a ticker callback to move the sprite back and forth
+     let elapsed = 0.0;
+     app.ticker.add((delta) => {
+       elapsed += delta;
+       sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
+
+       components.forEach(c =>{
+        c.comp.y += 1;
+        //--there r 3 items in component struct
+        // the comp is actual pixi component 
+        //app.stage.addChild(c.comp);
+     });
+
+
+
+
+     });
