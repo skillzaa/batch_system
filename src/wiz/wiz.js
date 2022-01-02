@@ -14,18 +14,28 @@ init(){
     this.get_components();
     this.get_agfs();
     this.match_comp_agfs();
+    this.add_components_to_stage();
+    this.append_app_to_body();
+    return true;
 }
+append_app_to_body(){
+document.body.appendChild(this.app.view);
+}
+add_components_to_stage(){
+    this.components.forEach( c => {
+    this.app.stage.addChild(c.comp);
+    });    
+}
+
 is_batch_completed(){
 let tf = this.are_batch_agfs_done();
 if (tf==true){
         if (this.batch_number >= this.total_batches){
-        // ticker.stop();
-        // console.log("wiz",wiz);
         console.log("video ended");
         // return true;
         }else {
             this.batch_number +=1;
-        console.log("increase the batch");
+        // console.log("increase the batch");
         return true;
         }
     }else {
