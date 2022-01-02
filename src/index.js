@@ -3,7 +3,7 @@ import Wiz from "./wiz/wiz.js";
 let wiz= new Wiz();
 // console.log("wiz",wiz);
 let batch_number = 1;
-let total_batches = 10;
+let total_batches = 3;
 let app = wiz.app;
 document.body.appendChild(app.view);
 
@@ -22,23 +22,30 @@ is_batch_completed();
     });
 //-----------------------------------------
 function is_batch_completed(){
-let completed = true;
-wiz.agfs.forEach( agf =>{
- if (agf.batch_number == batch_number && agf.completed == false){
-    completed = false;
-    return completed;
- }
-//--if completed then bump
-if (completed == true){
-    batch_number +=1;
-    console.log("Batch increased",batch_number);
-}
-if (batch_number >= total_batches){
-    ticker.stop();
-
-    console.log("wiz",wiz);
-    console.log("video ended",batch_number);
-
-}
-});
+let tf = are_batch_agfs_done();
+if (tf==true){
+        if (batch_number >= total_batches){
+        ticker.stop();
+        console.log("wiz",wiz);
+        console.log("video ended",batch_number);
+        }else {
+            batch_number +=1;
+        console.log("Batch increased",batch_number);
+        }
+    }else {
+        
+        //--
+    }
 }    
+//-------------------
+function are_batch_agfs_done(){
+let tf = true; 
+for (let index = 0; index < wiz.agfs.length; index++) {
+    const agf = wiz.agfs[index];
+    if (agf.batch_number == batch_number && agf.completed == false){
+        tf = false;
+        return false;
+    }   
+}   
+return tf;        
+}
