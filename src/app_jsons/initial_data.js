@@ -24,7 +24,7 @@ agfs : [
         batch_number:1,
         begin_data:0,
         final_data:500,
-        increment:10,
+        increment:1,
         necessary : true,
         component_target:"x",
         component_name : "rect_one"
@@ -34,17 +34,17 @@ agfs : [
         batch_number:1,
         begin_data:0,
         final_data:500,
-        increment:10,
+        increment:1,
         necessary : true,
         component_target:"y",
         component_name : "rect_one"
     },
     {
         name:"move_rect_two_y",
-        batch_number:2,
+        batch_number:1,
         begin_data:0,
         final_data:500,
-        increment:10,
+        increment:1,
         necessary : true,
         component_target:"y",
         component_name : "rect_two"
