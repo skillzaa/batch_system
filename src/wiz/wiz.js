@@ -1,5 +1,6 @@
-import {initial_data} from "./initial_data.js";
-import AgfObject from "./agfobject.js";
+import get_components from "./get_components.js";
+import get_agfs from "./get_agfs.js";
+import get_app from "./get_app.js";
 
 export default class Wiz {
 constructor(){
@@ -11,8 +12,8 @@ this.agfs = [];
 this.init();
 }
 init(){
-    this.get_components();
-    this.get_agfs();
+    this.components = get_components();
+    this.agfs = get_agfs();
     this.match_comp_agfs();
     this.add_components_to_stage();
     this.append_app_to_body();
@@ -74,41 +75,5 @@ match_comp_agfs(){
         });
     });
 }
-get_agfs(){
-initial_data.agfs.forEach((agf_data)=>{
-    let a = new AgfObject(agf_data);
-this.agfs.push(a);
-});
 
-}
-get_components(){
-    let components = [];
-    let components_data = initial_data.components;
-    
-    components_data.forEach((component)=>{
-        //------------------------------
-        let r = {};
-        r.name = component.name;
-        r.comp = rectangle(component);
-        //this.app.stage.addChild(r.comp);
-        this.components.push(r);
-        //------------------------------
-    }); 
-}
-}
-
-//---------------------
-function rectangle(item){
-var rectangle = new PIXI.Graphics();
-rectangle.beginFill(item.color); //yellow 0xFFFF00
-// rectangle.lineStyle(5, 0xFF0000); //red
-rectangle.drawRect(item.x, item.y, item.width, item.height);
-rectangle.endFill();
-return rectangle;
-}
-    
-function get_app(width=800,height=600){
-let app = new PIXI.Application({ 
-        width: width,height: height });
-return app;        
 }

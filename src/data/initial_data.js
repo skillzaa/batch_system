@@ -30,13 +30,13 @@ agfs : [
         component_name : "rect_one"
     },
     {
-        name:"move_rect_one_y",
+        name:"rect_one_width",
         batch_number:1,
-        begin_data:0,
-        final_data:500,
+        begin_data:10,
+        final_data:400,
         increment:1,
         necessary : true,
-        component_target:"y",
+        component_target:"height",
         component_name : "rect_one"
     },
     {

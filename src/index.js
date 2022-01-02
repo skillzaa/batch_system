@@ -1,4 +1,13 @@
+
+// console.log(wiz_globals);
 import Wiz from "./wiz/wiz.js";
+/**
+ * Wiz Public API
+ * app / ticker - 
+ * frame_counter
+ * is_batch_completed()
+ * update()
+ */
 let wiz= new Wiz();
 let frame_counter = 0;
 wiz.app.ticker.add((delta) => {
@@ -11,7 +20,7 @@ console.log("wiz increased interanl batch_number");
         case false:
             wiz.update();
             frame_counter++;
-console.log("frame_counter",frame_counter);
+// console.log("frame_counter",frame_counter);
         break;
 
         case "ended":
