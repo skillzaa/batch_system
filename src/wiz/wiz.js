@@ -31,8 +31,7 @@ is_batch_completed(){
 let tf = this.are_batch_agfs_done();
 if (tf==true){
         if (this.batch_number >= this.total_batches){
-        console.log("video ended");
-        // return true;
+        return "ended";
         }else {
             this.batch_number +=1;
         // console.log("increase the batch");
@@ -56,7 +55,6 @@ for (let index = 0; index < this.agfs.length; index++) {
 return tf;        
 }
 update(){
-this.is_batch_completed();
 this.components.forEach(component =>{
         component.agfs.forEach(agf =>{
             if (agf.batch_number == this.batch_number && agf.completed == false){
