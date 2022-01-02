@@ -13,16 +13,16 @@ init(){
     this.get_agfs();
     this.match_comp_agfs();
 }
-//--dont take the word update lightly
-update(batch_number=0){
-this.components.forEach(comp =>{
-    comp.agfs.forEach(agf =>{
-        if (agf.batch_number == batch_number){
-            let u = agf.run();
-            comp[agf.component_target] = u;
-        }
+
+update(batch_number){
+this.components.forEach(component =>{
+        component.agfs.forEach(agf =>{
+            if (agf.batch_number == batch_number && agf.completed == false){
+                let u = agf.run();
+                component.comp[agf.component_target] = u;
+            }
+        });
     });
-});
 }
 match_comp_agfs(){
     this.components.forEach(comp =>{

@@ -46,6 +46,16 @@ agfs : [
         final_data:500,
         increment:1,
         necessary : true,
+        component_target:"x",
+        component_name : "rect_two"
+    },    
+    {
+        name:"test_01",
+        batch_number:2,
+        begin_data:0,
+        final_data:500,
+        increment:1,
+        necessary : true,
         component_target:"y",
         component_name : "rect_two"
     }    

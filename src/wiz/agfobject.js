@@ -17,6 +17,8 @@ this.component_target = item.component_target;
             this.current_data += this.increment;
            return this.current_data;
         }else {
+            //-no call back just use flag
+            this.completed = true;
             return this.current_data;
         }
     }
