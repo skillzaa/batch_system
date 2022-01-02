@@ -1,9 +1,11 @@
-import {initial_data} from "../app_jsons/initial_data.js";
+import {initial_data} from "./initial_data.js";
 import AgfObject from "./agfobject.js";
 
 export default class Wiz {
 constructor(){
 this.app = get_app();
+this.batch_number = 1;
+this.total_batches = 3;
 this.components  = [];
 this.agfs = []; 
 this.init();
@@ -13,11 +15,41 @@ init(){
     this.get_agfs();
     this.match_comp_agfs();
 }
-
-update(batch_number){
+is_batch_completed(){
+let tf = this.are_batch_agfs_done();
+if (tf==true){
+        if (this.batch_number >= this.total_batches){
+        // ticker.stop();
+        // console.log("wiz",wiz);
+        console.log("video ended");
+        // return true;
+        }else {
+            this.batch_number +=1;
+        console.log("increase the batch");
+        return true;
+        }
+    }else {
+        return false;
+        //--
+    }
+return false;    
+}    
+are_batch_agfs_done(){
+let tf = true; 
+for (let index = 0; index < this.agfs.length; index++) {
+    const agf = this.agfs[index];
+    if (agf.batch_number == this.batch_number && agf.completed == false){
+        tf = false;
+        return false;
+    }   
+}   
+return tf;        
+}
+update(){
+this.is_batch_completed();
 this.components.forEach(component =>{
         component.agfs.forEach(agf =>{
-            if (agf.batch_number == batch_number && agf.completed == false){
+            if (agf.batch_number == this.batch_number && agf.completed == false){
                 let u = agf.run();
                 component.comp[agf.component_target] = u;
             }
