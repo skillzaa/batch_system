@@ -4,8 +4,8 @@ export default class DrawEngine {
 constructor(width=800,height=600){
     this.view_state = view_state;
     this.app = new PIXI.Application({ 
-    width: 640, 
-    height: 360 
+    width: width, 
+    height: height
             });
 this.components = this.generate_components();
 document.body.appendChild(this.app.view);
@@ -52,8 +52,9 @@ function rectangle(item){
 var rectangle = new PIXI.Graphics();
 rectangle.beginFill(item.color); //yellow 0xFFFF00
 // rectangle.lineStyle(5, 0xFF0000); //red
-// rectangle.endFill();
 rectangle.drawRect(item.x, item.y, item.width, item.height);
+// EMPTY
+rectangle.endFill();
 return rectangle;
 }
     
