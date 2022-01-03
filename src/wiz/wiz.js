@@ -1,5 +1,5 @@
 import get_components from "./get_components.js";
-import get_agfs from "./get_agfs.js";
+import get_agfs from "../agf_factory/get_agfs.js";
 import get_app from "./get_app.js";
 
 export default class Wiz {
