@@ -27,7 +27,8 @@ is_batch_completed(){ //return true false ended
     let tf = this.are_batch_agfs_done();
     if (tf==true){
             if (this.batch_number >= this.total_batches){
-            return "ended";
+            // return "ended";
+            return true; // this should be error
             }else {
                 this.batch_number +=1;
             // console.log("increase the batch");
