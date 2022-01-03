@@ -1,8 +1,8 @@
-import {wiz_globals} from "./wiz_globals.js";
-let xfactor = wiz_globals.app_width/100;
+import {glbl} from "./glbl.js";
+let xfactor = glbl.app_width/100;
 
 export default function x(int){
- let result = wiz_globals.app_width;//default value
+ let result = glbl.app_width;//default value
  switch (int) {
     case 10:
     result = xfactor * 10;    
@@ -32,7 +32,7 @@ export default function x(int){
     result = xfactor * 90;    
     break;
     case 100:
-    result = wiz_globals.app_width;    
+    result = glbl.app_width;    
     break;
 
      default:   
