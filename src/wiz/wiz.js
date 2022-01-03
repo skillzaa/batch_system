@@ -1,4 +1,5 @@
-import get_components from "./get_components.js";
+//import get_components from "./get_components.js";
+import get_base_components from "../component_factory/get_base_components.js";
 import get_agfs from "../agf_factory/get_agfs.js";
 import get_app from "./get_app.js";
 
@@ -12,7 +13,7 @@ this.agfs = [];
 this.init();
 }
 init(){
-    this.components = get_components();
+    this.components = get_base_components();
     this.agfs = get_agfs();
     this.match_comp_agfs();
     this.add_components_to_stage();
@@ -24,6 +25,7 @@ document.body.appendChild(this.app.view);
 }
 add_components_to_stage(){
     this.components.forEach( c => {
+    //--this is an error in design    
     this.app.stage.addChild(c.comp);
     });    
 }

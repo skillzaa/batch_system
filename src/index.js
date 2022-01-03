@@ -1,5 +1,4 @@
 
-// console.log(wiz_globals);
 import Wiz from "./wiz/wiz.js";
 /**
  * Wiz Public API
@@ -9,6 +8,7 @@ import Wiz from "./wiz/wiz.js";
  * update()
  */
 let wiz= new Wiz();
+console.log("wiz",wiz);
 let frame_counter = 0;
 wiz.app.ticker.add((delta) => {
 let is_batch_completed = wiz.is_batch_completed();
