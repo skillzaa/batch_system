@@ -9,5 +9,6 @@ import Wiz from "./wiz/wiz.js";
  */
 let wiz= new Wiz();
 wiz.init();
+
 console.log("wiz",wiz);
 wiz.start();

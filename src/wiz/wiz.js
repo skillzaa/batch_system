@@ -32,39 +32,40 @@ add_components_to_stage(){
 }
 
 all_comp_batch_done(){
-let is_batch_completed = true; 
+let all_comp_batch_done = true; 
 for (let index = 0; index < this.components.length; index++) {
-    if (this.components[index].is_batch_completed() == false){
-        is_batch_completed = false;
+    // this.batch_number is must
+    if (this.components[index].is_batch_completed(this.batch_number) == false){
+        all_comp_batch_done = false;
         return false;
     }   
 }   
-return is_batch_completed;        
+return all_comp_batch_done;        
 }
 update(){
+    this.update_components();
+    this.update_batch_number();
+}
+end(){
+this.app.ticker.stop();
+console.log("video ended");
+}
+update_batch_number(){    
+if (this.all_comp_batch_done() == true){
+// this.batch_number += 1;    
+console.log("wiz increased interanl batch_number");
+}else {
+this.frame_counter++;
+return false;
+}    
+}
+update_components(){
 this.components.forEach(component =>{
         component.update(this.batch_number);
     });
 }
 start(){
-this.app.ticker.add( delta => {
-    let a  = this.all_comp_batch_done();
-    switch (a) {
-        case true:
-console.log("wiz increased interanl batch_number");
-        break;
-        case false:
-            this.update();
-            this.frame_counter++;
-// console.log("frame_counter",frame_counter);
-        break;
-        case "ended":
-            this.app.ticker.stop();
-            console.log("video ended");
-        break;
-    }
-});
-
+this.app.ticker.add(this.update.bind(this));
 }
 
 }//wiz
