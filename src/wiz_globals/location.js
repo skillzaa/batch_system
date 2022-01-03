@@ -3,7 +3,6 @@ let xfactor = wiz_globals.app_width/100;
 
 export default function x(int){
  let result = wiz_globals.app_width;//default value
-return 4;
  switch (int) {
     case 10:
     result = xfactor * 10;    
