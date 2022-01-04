@@ -1,40 +1,30 @@
 // import {basic_batch} from "../animations/basic_batch.js"
 
-export default class Batch{
-constructor(batch_number=1){
-this.batch_number = batch_number;
-this.agfs = [];
-this.get_batch_agfs();    
+export default class BatchBase{
+constructor(animations={}){
+this.animations = animations;
 }
 is_completed(){
 let tf = true; 
 for (let index = 0; index < this.agfs.length; index++) {
-    const agf = this.agfs[index];
-    if (agf.completed == false){
+    const animation = this.animations[index];
+    if (animation.completed == false){
         return false;
     }   
 }   
 return tf;        
 }
-update(component){
-    this.agfs.forEach(agf =>{
+//component is wiz component class and comp is pixi componenet inside it
+update(comp){
+    this.animations.forEach(animation =>{
         // thie is not required :agf.batch_number == batch_number &&
-        if (agf.completed == false){
+        if (animation.completed == false){
             //agf run just return tha value
-            let u = agf.run();
+            let u = animation.animate();
             //this is where mut happen 
-            component[agf.component_target] = u;
+            comp[animation.component_target] = u;
         }
     });
 }
-//--fix this later
-get_batch_agfs(){
-let raw_agfs = basic_batch.agfs;
-raw_agfs.forEach(agf_data =>{
-    let translated = translate_agf_data(agf_data);
-    let a = new AgfObject(translated);
-    this.agfs.push(a);
-});
-
-}        
+        
 }
