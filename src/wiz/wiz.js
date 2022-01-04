@@ -1,6 +1,6 @@
 //import get_components from "./get_components.js";
 import get_base_components from "../component_factory/get_base_components.js";
-// import get_agfs from "../agf_factory/get_agfs.js";
+import component_factory from "../component_factory/component_factory.js";
 import get_app from "./get_app.js";
 
 export default class Wiz {
@@ -10,10 +10,12 @@ this.batch_number = 1;
 this.frame_counter = 0;
 this.total_batches = 2;
 this.components  = [];
+let b = component_factory();
+this.components.push(b);
 this.init();
 }
 init(){
-    this.components = get_base_components();
+    // this.components = get_base_components();
     // this.agfs = get_agfs();
     // this.match_comp_agfs();
     this.append_app_to_body();

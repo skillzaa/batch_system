@@ -1,13 +1,11 @@
-import {default_base_init_data} from "./default_base_init_data.js";
-import Batch from "../../batch/Batch.js"
-import rectangle from "./rectangle.js";
+import Batch from "../../batch/Batch.js";
 
 
 export default class BaseComp{
-constructor(comp_init_data=default_base_init_data){
-this.init_data = comp_init_data;
-this.name = comp_init_data.name;    
-this.comp = rectangle(default_base_init_data);
+constructor(name){
+// this.init_data = comp_init_data;
+this.name = name;    
+this.comp = [];
 this.batches = [];
 let b = new Batch(1);
 this.batches.push(b);
