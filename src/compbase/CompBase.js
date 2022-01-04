@@ -1,4 +1,4 @@
-import Batch from "../../batch/Batch.js";
+import Batch from "../batch/BatchBase.js";
 
 
 export default class BaseComp{

@@ -1,13 +1,20 @@
 import AnimationBase from "../../animation/AnimationBase.js";
-
-export default function int_inc_dec (begin_data=0,final_data=100,increment=1) {
+//begin_data=0,final_data=100,increment=1
+export default function int_inc_dec (animation_data) {
  let resp= {}; 
-resp.animation_data = {
-    increment: increment,
-    begin_data: begin_data,
-    final_data: final_data,
-    current_data: begin_data
-};   
+resp.animation_data = {};
+try{
+resp.animation_data.increment = 
+animation_data.increment;
+resp.animation_data.begin_data = 
+  animation_data.begin_data;
+resp.animation_data.final_data =
+   animation_data.final_data;
+resp.animation_data.current_data =
+ animation_data.begin_data;   
+} catch (e){
+    console.error(e);
+}
 resp.animate = (oldval= 0)=>{
     if (this.animation_data.current_data < this.animation_data.final_data){
         this.animation_data.current_data += this.animation_data.increment;

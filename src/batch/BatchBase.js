@@ -1,6 +1,4 @@
-import {basic_batch} from "../animations/basic_batch.js"
-import AgfObject from "./agfobject.js";
-import translate_agf_data from "./translate_agf_data.js";
+// import {basic_batch} from "../animations/basic_batch.js"
 
 export default class Batch{
 constructor(batch_number=1){

@@ -5,6 +5,7 @@ constructor(basic_data=default_basic_data){
 this.animation_data = {};
 // animation generation function type--set it manually if the animation function is changed
 // AGf = animate function 
+//---THIS BELONG TO THIS OBJECT
 this.agf_type = "animation_base";
 //=======================================    
 //=======================================    

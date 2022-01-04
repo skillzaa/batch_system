@@ -1,18 +1,18 @@
 export const basic_batch = {
 name : "left_to_right",
 id : "Acd422xzJH75qpc39",    
-//--these items were removed from lower
-//batch_number
-// component_name
-agfs : [
+//animationS plural
+animations : [
     {
-        name:"x",
-        component_target:"x",
-        type : "basic",
-        begin_data:0,
-        final_data:80,
-        increment:1,
-        necessary: true,
+        agf_type:"??",
+        animation_data : {
+            component_target:"x",
+            begin_data:0,
+            final_data:80,
+            increment:1,
+            necessary: true,
+        }
+        
     },
     {
         name:"y",
