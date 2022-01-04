@@ -1,4 +1,4 @@
-import int_inc_dec from "../animations/int_inc_dec.js";
+import int_inc_dec from "../../animations/int_inc_dec.js";
 import BatchBase from "../../batch/BatchBase.js";
 // import ff from "../../animation/AnimationBase.js"
 
