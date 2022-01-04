@@ -1,5 +1,5 @@
 import Batch from "../batch/BatchBase.js";
-import rectangle from "../components/rectangle.js";
+import rectangle from "./rectangle.js";
 
 export default class BaseComp{
 constructor(name){

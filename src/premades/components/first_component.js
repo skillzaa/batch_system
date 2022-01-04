@@ -1,4 +1,4 @@
-import CompBase from "../../compbase/CompBase.js";
+import CompBase from "../../components/CompBase.js";
 import first from "../sequences/first.js";
 export default function first_component(){
 

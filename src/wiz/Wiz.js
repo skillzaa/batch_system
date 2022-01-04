@@ -6,7 +6,7 @@ constructor(){
 this.app = get_app();
 // this.frame = new Frame();
 this.frame = 0;
-this.components  = [];
+this.components  = []; //add to this after creation
 this.init();
 }
 init(){
