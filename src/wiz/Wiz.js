@@ -4,11 +4,10 @@ import Frame from "../frame/Frame.js";
 export default class Wiz {
 constructor(){
 this.app = get_app();
-this.frame = new Frame();
+// this.frame = new Frame();
+this.frame = 0;
 this.components  = [];
-// let b = component_factory();
-// this.components.push(b);
-// this.init();
+this.init();
 }
 init(){
     this.append_app_to_body();
@@ -26,8 +25,7 @@ add_components_to_stage(){
 }
 
 update(){
-    // this.update_components();
-    // this.update_batch_number();
+    this.update_components(this.frame);
 }
 end(){
 this.app.ticker.stop();
@@ -35,8 +33,9 @@ console.log("video ended");
 }
 
 update_components(){
+this.frame += 1;    
 this.components.forEach(component =>{
-        component.update(component);
+        component.update(this.frame);
     });
 }
 start(){
