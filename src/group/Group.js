@@ -2,8 +2,8 @@
 
 
 export default class Group {
-constructor(starting_fram){
-this.starting_frame = starting_fram;   
+constructor(starting_frame){
+this.starting_frame = starting_frame;   
 this.running_batch = 0; 
 this.batches = [];
 

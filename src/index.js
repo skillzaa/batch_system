@@ -1,15 +1,5 @@
-import batch_builder from "./batch_builder/batch_builder.js";
+import left_to_right from "./premades/batches/left_to_right.js";
 
+let d = left_to_right();
 
-
-
-// import AnimationBase from "./Animation/AnimationBase.js";
-
-// let a = new AnimationBase();
-// console.log("Animation",a);
-// import build_animation from "./animation_builder/animation_builder.js";
-
-// let ab = build_animation();
-// console.log(ab);
-let b = batch_builder();
-console.error(b);
+console.log(d);

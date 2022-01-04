@@ -1,8 +1,8 @@
 
 import exponential from "./agfs/exponential.js";
-import int_inc_dec from "./agfs/int_inc_dec.js";
+import int_inc_dec from "../premades/animations/int_inc_dec.js";
 
-export default function build_animation (agf_type,basic_data={},animation_data={}){
+export default function animation_builder  (agf_type,basic_data={},animation_data={}){
 //--this is animation data and not 
 switch ("agf_type") {
     case "exponential":
