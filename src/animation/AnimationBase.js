@@ -1,14 +1,17 @@
 
-export default class Animation{
+export default class AnimationBase{
 constructor(basic_data=default_basic_data){
 //-- this is for animation function later we just over ride the animation fn and add data to this.    
 this.animation_data = {};
+// animation generation function type--set it manually if the animation function is changed
+// AGf = animate function 
+this.agf_type = "animation_base";
 //=======================================    
 //=======================================    
 //--the name is not being used ????   
-this.name = basic_data.name; 
+this.name = basic_data.name;
 //---when will i need this
-this.id = basic_data.id; 
+this.id = basic_data.id;
 //--- if this is false the batch can complete even if this is not completed yet
 this.necessary = basic_data.necessary;
 //once this is true the agf is exhausted
@@ -30,6 +33,7 @@ return oldval;
 export const default_basic_data = {
     name: "animation_object",
     id: "5tc&za@G!.,~",
+    agf_type: "",
     necessary: true,
     completed: false,
     component_target: "x"
