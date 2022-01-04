@@ -1,7 +1,7 @@
 //import get_components from "./get_components.js";
-import get_base_components from "../component_factory/get_base_components.js";
-import component_factory from "../component_factory/component_factory.js";
-import get_app from "./get_app.js";
+import get_base_components from "../wiz_builder/component_factory/get_base_components.js.js";
+import component_factory from "../wiz_builder/component_factory/component_factory.js";
+import get_app from "../wiz/get_app.js";
 
 export default class Wiz {
 constructor(){

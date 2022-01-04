@@ -10,7 +10,7 @@ comp : {
     y : 10,
     width :  75,
     height : 50,
-    color :  0xFF0000,
+    color :  0xffff00,
 },
 agfs : [
     {

@@ -1,6 +1,6 @@
-import {initial_data } from "../data/initial_data.js";
+import {initial_data } from "../wiz_builder/data/initial_data.js";
 
-import BaseComp from "./basecomp/BaseComp.js";
+import BaseComp from "../objects/BaseComp.js";
 
 export default function get_base_components(){
 let components = [];
