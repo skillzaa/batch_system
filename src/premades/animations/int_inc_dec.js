@@ -1,4 +1,4 @@
-import AnimationBase from "../../animation/AnimationBase.js";
+import AnimationBase from "../../animation/AnimationBasexx.js";
 //begin_data=0,final_data=100,increment=1
 export default function int_inc_dec (basic_data,animation_data) {
  let resp= {}; 

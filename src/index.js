@@ -1,5 +1,4 @@
-import left_to_right from "./premades/batches/left_to_right.js";
+import Animation from "./animation/Animation.js";
 
-let d = left_to_right();
-
-console.log(d);
+let a = new Animation();
+console.log(a);

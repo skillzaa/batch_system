@@ -1,6 +1,4 @@
-import AnimationBase from "./AnimationBase.js";
-import {default_basic_data} from "./AnimationBase.js";
-/** make sure that the Animation object that is created by dafult has following data memebers present and their values are = their default_basic_data- we need to check all this to ensure that these data items are always present and there is a default object with these datum.  */
+import Animation from "./Animation.js";
 /**
  * The fields are
  * every class must have id and name
@@ -15,31 +13,31 @@ import {default_basic_data} from "./AnimationBase.js";
 
 describe('name: animation_object', () => {
     it('check name', () => {
-    let a = new AnimationBase();
+    let a = new Animation();
         expect(a.name).toEqual("animation_object");
     });
 });
 describe("id: 5tc&za@G!.,~", () => {
     it('Compute the square of a number', () => {
-    let a = new AnimationBase();
+    let a = new Animation();
         expect(a.id).toEqual("5tc&za@G!.,~");
     });
 });
 describe('necessary: true', () => {
     it('Compute the square of a number', () => {
-    let a = new AnimationBase();
+    let a = new Animation();
         expect(a.necessary).toEqual(true);
     });
 });
 describe('completed: false', () => {
     it('Compute the square of a number', () => {
-    let a = new AnimationBase();
+    let a = new Animation();
         expect(a.completed).toEqual(false);
     });
 });
 describe('component_target', () => {
     it('Compute the square of a number', () => {
-    let a = new AnimationBase();
+    let a = new Animation();
         expect(a.component_target).toEqual("x");
     });
 });
@@ -47,7 +45,7 @@ describe('component_target', () => {
 ///--- now lets run the animate fn with different values (except 100) and check it should Not be completed
 describe('animate fn need 100 to complete', () => {
     it('no 100 as old_val', () => {
-    let a = new AnimationBase();
+    let a = new Animation();
     // index is less tha 100 so it should never complete
         for (let i = 0; i < 100; i++) {
             let u = a.animate(i);
@@ -61,7 +59,7 @@ describe('animate fn need 100 to complete', () => {
 
 describe('animate fn need 100 to complete', () => {
     it('100', () => {
-        let a = new AnimationBase();
+        let a = new Animation();
         let u = a.animate(100);
         expect(u).toEqual(100);
         expect(a.completed).toEqual(true);
