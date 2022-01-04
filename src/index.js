@@ -8,7 +8,7 @@ import Wiz from "./wiz/wiz.js";
  * update()
  */
 let wiz= new Wiz();
-wiz.init();
+// wiz.init();
 
 console.log("wiz",wiz);
 wiz.start();

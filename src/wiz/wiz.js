@@ -10,8 +10,7 @@ this.batch_number = 1;
 this.frame_counter = 0;
 this.total_batches = 2;
 this.components  = [];
-// this.agfs = []; 
-// this.init();
+this.init();
 }
 init(){
     this.components = get_base_components();

@@ -23,7 +23,6 @@ b.update(this.comp);
 console.log(err);
 return false;
 }    
-
 }
 
 is_batch_completed(batch_number){ 
