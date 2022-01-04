@@ -1,4 +1,6 @@
-import first from "./premades/sequences/first.js";
 
-let f = first();
-console.log("first", f);
+import first_component from "./premades/components/first_component.js";
+
+
+let f = first_component();
+console.log("first_component",f);
