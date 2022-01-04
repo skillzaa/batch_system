@@ -1,4 +1,3 @@
-// import {basic_batch} from "../animations/basic_batch.js"
 
 export default class BatchBase{
 constructor(animations={}){
