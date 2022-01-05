@@ -26,7 +26,11 @@ add_components_to_stage(){
 }
 
 update(){
-    this.update_components(this.frame.cur_frame);
+    // place values in update_components 
+    this.update_components();
+    // more updates here
+    //----update runners
+    //-- update background
 }
 end(){
 this.app.ticker.stop();
@@ -36,7 +40,7 @@ console.log("video ended");
 update_components(){
 this.frame += 1;    
 this.components.forEach(component =>{
-        component.update(this.frame);
+        component.update(this.frame.cur_frame);
     });
 }
 start(){
