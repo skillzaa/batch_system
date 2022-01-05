@@ -37,6 +37,7 @@ console.log("video ended");
 }
 
 update_components(){
+//--no need to check if comp has start_frame or not just a complication    
 this.frame.frame_cur += 1;    
 this.components.forEach(component =>{
         component.update(this.frame.frame_cur);

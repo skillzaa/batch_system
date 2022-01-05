@@ -14,7 +14,7 @@ constructor(begin_value=0,final_value=100,increment=1,component_target="x"){
     }
     this.increment = increment; 
     //---Musttttt component_target can just be x,y,width,height
-    this.component_target = "x";
+    this.component_target = component_target;
     //==============================
 //--these will just take of them selves
     this.current_value = this.begin_value;//just to initialize oldval just for legacy reasons
