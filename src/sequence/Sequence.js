@@ -1,9 +1,8 @@
 
 
-
 export default class Sequence {
 constructor(){
-this.starting_frame = 0;    //??????????
+this.start_frame = 0;    //??????????
 this.running_batch = 0; 
 this.batches = [];
 

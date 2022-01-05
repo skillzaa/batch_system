@@ -15,7 +15,7 @@ this.necessary = true;
 this.completed = false;
 //--if this was rust component_target should have been a enum.=====MUST SET ====
 this.component_target = "x";
-this.comp_pointer = "";
+// this.comp_pointer = "";
 }
 
 }

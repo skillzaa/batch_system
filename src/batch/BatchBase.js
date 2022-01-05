@@ -2,7 +2,7 @@
 export default class BatchBase{
 constructor(animations={}){
 this.animations = animations;
-
+this.comp = "";
 }
 is_completed(){
 let tf = true; 
