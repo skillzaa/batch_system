@@ -1,6 +1,8 @@
+import Consumable from "../consumable/Consumable.js";
 
-export default class BatchBase{
+export default class BatchBase extends Consumable {
 constructor(animations={}){
+super(); 
 this.animations = animations;
 this.comp = "";
 }

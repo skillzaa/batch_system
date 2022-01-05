@@ -1,6 +1,8 @@
+import Consumable from "../consumable/Consumable.js";
 
-export default class AnimationAbstract{
+export default class AnimationAbstract extends Consumable {
 constructor(){
+super();     
 //---THIS BELONG TO THIS OBJECT
 this.agf_type = "animation_abstract";
 //=======================================    

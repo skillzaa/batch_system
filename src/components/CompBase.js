@@ -1,8 +1,9 @@
 import Batch from "../batch/BatchBase.js";
 import rectangle from "./rectangle.js";
-
-export default class BaseComp{
+import Consumable from "../consumable/Consumable.js";
+export default class BaseComp extends Consumable {
 constructor(name){
+super();    
 this.name = name;    
 this.comp = rectangle({x:0,y:0,width:100,height:25,color: 0xffff00 });
 this.sequences = [];
