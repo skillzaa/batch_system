@@ -4,7 +4,10 @@ import Consumable from "../consumable/Consumable.js";
 export default class Sequence extends Consumable {
 constructor(){
 super(); 
-this.start_frame = 0;    //??????????
+//--every sequence has to start at a specific frame and can not start before that-- this is the start time of 
+this.start_frame = 0;
+//-- this is the stop time it is not used at the moment (i.e we let a seq run unless consumed) but if there is a need we can implement some code where a seq can not run after some frame -- it is like run from frame 5 onwards (approx upto 15) but definitely  not after 30 frame. we may also have to add remove_after_stop_frame. we can just consume it if the frame.frame_cur is over this stop_frame.   
+this.stop_frame = 0;    
 this.running_batch = 0; 
 this.batches = [];
 

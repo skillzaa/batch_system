@@ -6,7 +6,6 @@ constructor(){
 this.app = get_app();
     // this.frame = new Frame();
 this.frame = new Frame();    
-this.frame = 0;
 this.components  = []; //add to this after creation
 // this.init();
 }
@@ -38,9 +37,9 @@ console.log("video ended");
 }
 
 update_components(){
-this.frame += 1;    
+this.frame.frame_cur += 1;    
 this.components.forEach(component =>{
-        component.update(this.frame.cur_frame);
+        component.update(this.frame.frame_cur);
     });
 }
 start(){
