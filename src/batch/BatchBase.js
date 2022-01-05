@@ -6,11 +6,19 @@ super();
 this.animations = animations;
 this.comp = "";
 }
-is_completed(){
+
+check_if_consumed(){
+let tf = this.check_if_all_animations_consumed();
+if (tf == true){
+    //---mark your self consumed--!!!!!!
+    this.consume();
+}
+}
+//--each animation can check its self but batch has to check the entire batch and then can itsself be consumed
+check_if_all_animations_consumed(){
 let tf = true; 
-for (let index = 0; index < this.agfs.length; index++) {
-    const animation = this.animations[index];
-    if (animation.completed == false){
+for (let index = 0; index < this.animations.length; index++) {
+if (this.animations[index].completed == false){
         return false;
     }   
 }   
@@ -27,6 +35,9 @@ update(){
             this.comp[animation.component_target] = u;
         }
     });
-}
+//---------------------   
+this.check_if_consumed(); 
+//---------------------    
+}//--update ends
         
 }
