@@ -14,14 +14,19 @@ this.batches = [];
 }
 update(){
     //---check self for consumption
-    this.check_if_consumed
-    this.update_batch_number();
-    this.batches[this.cur_batch].update();
+    if (this.check_if_consumed()){ 
+        console.log("seq consumed");
+        return;
+    }else {
+        this.update_batch_number();
+        this.batches[this.cur_batch].update();
+    }
+
 }
 //--once again every batch has to be consumed for the parent to be consumed
 //--- this is not being checked at comp level
 check_if_consumed(){
-let tf = check_if_all_batches_consumed();
+let tf = this.check_if_all_batches_consumed();
 if (tf == true){
     //---mark your self consumed--!!!!!!
     this.consume();
