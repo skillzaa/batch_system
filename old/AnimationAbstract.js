@@ -1,4 +1,4 @@
-import Consumable from "../consumable/Consumable.js";
+import Consumable from "../src/consumable/Consumable.js";
 
 export default class AnimationAbstract extends Consumable {
 constructor(){

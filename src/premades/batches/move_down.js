@@ -12,7 +12,7 @@ animations.push(down);
 let b = new BatchBase(animations);
 b.comp = comp; /// importanto
 //====this is main game
-b.start_frame = 10;
+b.start_frame = 100;
 
 return b;
 }

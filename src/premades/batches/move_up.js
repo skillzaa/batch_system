@@ -12,7 +12,7 @@ animations.push(left);
 
 let b = new BatchBase(animations);
 b.comp = comp; /// importanto
-b.start_frame = 510; //it shd be 310 but lets pause it for a while
+b.start_frame = 600; //it shd be 400 but lets pause it for a while
 
 return b;
 }
