@@ -3,9 +3,12 @@
 
 //there r 60 frames in a sec so
 export default class Frame {
-constructor(){
-this.frame_number = 0;
-this.max_frames = 3600;//3 thousand six hundred 1min
+constructor(last_frame = 3600){
+this.frame_cur = 0;
+this.last_frame = last_frame;//3 thousand six hundred 1min
+this.frame_mid = parseInt(this.last_frame / 2);
+this.frame_quarter = parseInt(this.last_frame / 4);
+this.frame_three_quarter = parseInt((this.last_frame /100) * 75);
 // this.max_frames = 36000;//36 thousand 10min
 // this.max_frames = 216000;//2 lack 16 thousand 1hour
 }

@@ -4,7 +4,8 @@ import Frame from "../frame/Frame.js";
 export default class Wiz {
 constructor(){
 this.app = get_app();
-// this.frame = new Frame();
+    // this.frame = new Frame();
+this.frame = new Frame();    
 this.frame = 0;
 this.components  = []; //add to this after creation
 // this.init();
@@ -25,7 +26,7 @@ add_components_to_stage(){
 }
 
 update(){
-    this.update_components();
+    this.update_components(this.frame.cur_frame);
 }
 end(){
 this.app.ticker.stop();
