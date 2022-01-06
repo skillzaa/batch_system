@@ -14,6 +14,7 @@ add_batch(start_frame,animation)
 //------------Animation
 animation.glbl.stage = this.wiz.app.stage;    
 animation.glbl.renderer = this.wiz.app.renderer; 
+animation.glbl.comp = this.component.comp; //same mistake 
 // console.log("renderer-width",this.wiz.app.renderer.width);
 // console.log("renderer-height",this.wiz.app.renderer.height);
 
