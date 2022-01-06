@@ -7,8 +7,9 @@ import Builder from "../builder/Builder.js";
 export default function get_comp(wiz){
 let builder = new Builder(wiz);
 //===============================
-let x_left  = new Xbounded(0,20);
-builder.add_batch(100, x_left);
+let ani = [];
+ani.push(new Xbounded(0,2));
+builder.add_batch(100, ani);
 //===============================
 //-------------------
 return builder.component;
