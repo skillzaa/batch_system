@@ -1,5 +1,4 @@
 
-
 export default class IntInc  {
 constructor(begin_value=0,final_value=100,increment=1,component_target="x"){
     //--just set these 4 
@@ -28,6 +27,7 @@ animate (){
         this.oldval = this.current_value;
         //--increment
         this.current_value += this.increment;
+        // console.log(this.current_value);
        return this.current_value;
     }else {
         //--just keep returning the last value

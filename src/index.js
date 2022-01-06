@@ -1,8 +1,10 @@
+import get_comp from "./premades/square_move.js";
+import Wiz from "./wiz/Wiz.js";
 
-import first_wiz from "./premades/videos/first_wiz.js";
-
-let wiz = first_wiz();
+let wiz = new Wiz();
+let c = get_comp();
+wiz.components.push(c);
 wiz.init();
-
 console.log("wiz",wiz);
 wiz.start();
+

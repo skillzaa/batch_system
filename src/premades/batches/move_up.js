@@ -1,5 +1,5 @@
 import IntDec from "../../animations/IntDec.js";
-import BatchBase from "../../batch/BatchBase.js";
+import Batch from "../../batch/Batch.js";
 
 export default function move_up(comp){
 let animations = [];
@@ -10,7 +10,7 @@ animations.push(left);
  animations.push(up);
 
 
-let b = new BatchBase(animations);
+let b = new Batch(animations);
 b.comp = comp; /// importanto
 b.start_frame = 600; //it shd be 400 but lets pause it for a while
 
