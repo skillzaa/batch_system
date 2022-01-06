@@ -1,7 +1,9 @@
+import AnimationAbstract from "./AnimationAbstract.js";
 
 
-export default class IntDec  {
+export default class IntDec  extends AnimationAbstract{
 constructor(begin_value=100,final_value=0,increment=1,component_target="x"){
+    super();
     //--just set these 4 
     //==============================
     //.... begin value must be smaller than final_value- it is IntInc not IntDec

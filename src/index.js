@@ -1,9 +1,10 @@
-import get_comp from "./premades/square_move.js";
 import Wiz from "./wiz/Wiz.js";
-
+// import get_comp from "./premades/square_move.js";
+import Builder from "./builder/Builder.js";
+import IntInc from "./animations/IntInc.js";
+import get_comp from "./premades/square_move_builder.js";
 let wiz = new Wiz();
-let c = get_comp();
-wiz.components.push(c);
+wiz.components.push(get_comp(wiz));
 wiz.init();
 console.log("wiz",wiz);
 wiz.start();

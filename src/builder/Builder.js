@@ -1,50 +1,29 @@
-import Wiz from "../wiz/Wiz.js";
 import Component from "../components/Component.js";
 import Batch from "../batch/Batch.js";
 import IntInc from "../animations/IntInc.js";
-
+import Wiz from "../wiz/Wiz.js";
 
 export default class Builder {
-constructor(){
-this.wiz = new Wiz();
+constructor(wiz){
+this.wiz = wiz;    
 this.component = new Component();
-this.batch = new Batch();
-this.animation = new IntInc();
-// let c = first_component();
-// wiz.components.push(c);
     
 }
+add_batch(start_frame,animation)
+{
+//------------Animation
+animation.glbl.stage = this.wiz.app.stage;    
+animation.glbl.renderer = this.wiz.app.renderer; 
+// console.log("renderer-width",this.wiz.app.renderer.width);
+// console.log("renderer-height",this.wiz.app.renderer.height);
 
-get_wiz(){
-    return this.wiz;
+//------------Creating Batch    
+let batch = new Batch();
+batch.start_frame = start_frame;
+batch.comp = this.component.comp; //samemistake again
+batch.animations.push(animation);
+this.component.batches.push(batch);
+return this.component;
 }
-
-get_batch(){
-    return this.batch;
-}
-get_component(){
-    return this.component;
-}
-get_animation(){
-this.animation.stage = this.wiz.app.stage; 
-console.log("width",this.animation.stage.width);   
-console.log("height",this.animation.stage.height);   
-return this.animation;
-}
-// let animations = [];
-// let right  = new IntInc(0, 300, 1, "x");
-// animations.push(right);
-
-// let down  = new IntInc(0, 300, 1, "y");
-// animations.push(down);
-
-// let b = new Batch(animations);
-// b.comp = comp; /// importanto
-// //====this is main game
-// b.start_frame = 100;
-
-// return b;
-
-
 
 }//builder

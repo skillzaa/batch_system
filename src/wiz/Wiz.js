@@ -10,6 +10,7 @@ this.components  = []; //add to this after creation
 // this.init();
 }
 init(){
+    // console.log(this.app.stage.width);
     this.append_app_to_body();
     this.add_components_to_stage();
     return true;

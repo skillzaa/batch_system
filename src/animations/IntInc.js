@@ -1,6 +1,8 @@
+import AnimationAbstract from "./AnimationAbstract.js";
 
-export default class IntInc  {
+export default class IntInc extends AnimationAbstract  {
 constructor(begin_value=0,final_value=100,increment=1,component_target="x"){
+    super();
     //--just set these 4 
     //==============================
     //.... begin value must be smaller than final_value- it is IntInc not IntDec
@@ -27,8 +29,7 @@ animate (){
         this.oldval = this.current_value;
         //--increment
         this.current_value += this.increment;
-        // console.log(this.current_value);
-       return this.current_value;
+        return this.current_value;
     }else {
         //--just keep returning the last value
         return parseInt(this.current_value) ;
