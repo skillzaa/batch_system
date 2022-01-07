@@ -1,25 +1,15 @@
-import IntInc from "../animations/IntInc.js";
-import IntDec from "../animations/IntDec.js";
+import GotoX from "../animations/GotoXInc.js";
 import Component from "../components/Component.js";
 
 //every such fn shd have get_comp fn
 export default function get_comp(wiz){
 let component = new Component(wiz);
 
-let batch = component.new_batch();
-let ani01  = new IntInc(0, 100, 1, "x");
-let ani02  = new IntInc(0, 100, 1, "y");
-batch.add_animation(ani01);
-batch.add_animation(ani02);
-component.add_batch(batch);
+let batch = component.new_batch(wiz);
 
-let batch02 = component.new_batch();
-batch02.start_frame = 100;
-let ani03  = new IntInc(100, 400, 32, "width");
-let ani04  = new IntInc(25, 100, 8, "height");
-batch02.add_animation(ani03);
-batch02.add_animation(ani04);
-component.add_batch(batch02);
+let ani01  = {begin : 0,final :5000,increment : 5,type : "GotoXInc"};
+batch.add_animation(ani01);
+component.add_batch(batch);
 
 //-------------------
 return component;

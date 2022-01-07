@@ -32,9 +32,7 @@ if (this.current_value > (this.glbl.renderer.width - this.glbl.comp.width) ){
 animate (){
     if (this.current_value < this.final_value){
         
-        if (this.xbound_violated()){
-            return this.current_value;
-        }else {
+       else {
             // no benefit of saving since we can calculate that also but just to get-rid of this oldval confusion.
         // 
         this.oldval = this.current_value;

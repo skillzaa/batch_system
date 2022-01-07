@@ -1,4 +1,6 @@
 //This class will only be use by component via create_batch
+import AnimationGenerator from "../animations/AnimationGenerator.js";
+
 export default class Batch {
 constructor(wiz,comp){
 this.wiz = wiz;    
@@ -11,17 +13,15 @@ this.start_frame = 0;
 this.stop_frame = 0;    
 
 }
-add_animation(animation){
-//---------------Animation-
-//--Just get the animation add glbl data to it and dont bother about what it has inside. Just use it dont manage it.
-animation.glbl.stage = this.wiz.app.stage;    
-animation.glbl.renderer = this.wiz.app.renderer; 
+add_animation(ani_data){
+ani_data.stage = this.wiz.app.stage;    
+ani_data.renderer = this.wiz.app.renderer; 
 //same old mistake-- component.comp
-animation.glbl.comp = this.comp; 
+ani_data.comp = this.comp;
+//--Create the animation object and add glbl to it.
+let ag = new AnimationGenerator(ani_data);
+let animation = ag.select_animation(ani_data); 
 this.animations.push(animation); 
-// console.log("renderer-width",this.wiz.app.renderer.width);
-// console.log("renderer-height",this.wiz.app.renderer.height);
-
 }
 update(){
     this.animations.forEach(animation =>{
