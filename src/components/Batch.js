@@ -1,5 +1,5 @@
-//This class will only be use by component via create_batch
 import AnimationGenerator from "../animations/AnimationGenerator.js";
+import AniAbs from "../animations/AniAbs.js";
 
 export default class Batch {
 constructor(wiz,comp){
@@ -13,21 +13,22 @@ this.start_frame = 0;
 this.stop_frame = 0;    
 
 }
-add_animation(ani_data){
+//-- Step 01:: create a brand new animation Base object add stage,renderer and comp into it
+//-- Step 02:: add this animation obj to the animations array and then send it back so that user can add into it.
+add_animation(ani_data={}){
 ani_data.stage = this.wiz.app.stage;    
 ani_data.renderer = this.wiz.app.renderer; 
-//same old mistake-- component.comp
 ani_data.comp = this.comp;
-//--Create the animation object and add glbl to it.
-let ag = new AnimationGenerator(ani_data);
-let animation = ag.select_animation(ani_data); 
-this.animations.push(animation); 
+let animation = new AniAbs(ani_data);
+this.animations.push(animation);
+return animation; 
+
 }
 update(){
     this.animations.forEach(animation =>{
             let u = animation.animate();
             //this is where mut happen 
-            this.comp[animation.component_target] = u;
+            this.comp[animation.comp_target] = u;
     });
 }//--update ends
 }

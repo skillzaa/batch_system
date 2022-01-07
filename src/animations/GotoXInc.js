@@ -1,6 +1,7 @@
 
 export default class GotoXInc {
 constructor(data){
+    
     this.renderer = data.renderer;
     this.comp = data.comp;
     this.stage = data.stage;

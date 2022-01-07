@@ -1,16 +1,18 @@
-import GotoX from "../animations/GotoXInc.js";
 import Component from "../components/Component.js";
-
+import IntInc from "../animations/IntInc.js";
 //every such fn shd have get_comp fn
 export default function get_comp(wiz){
 let component = new Component(wiz);
-
+//-------------------/
 let batch = component.new_batch(wiz);
-
-let ani01  = {begin : 0,final :5000,increment : 5,type : "GotoXInc"};
-batch.add_animation(ani01);
-component.add_batch(batch);
-
+    batch.start_frame = 0;
+    // batch.name = String(final);
+    let ani_data  = {begin : 0,final: 800,increment : 1 , comp_target : "y"};
+    let animation = batch.add_animation(ani_data);
+    animation.animate = IntInc;
+    component.add_batch(batch);
+    //-------------------
+    
 //-------------------
 return component;
 //-------------------
