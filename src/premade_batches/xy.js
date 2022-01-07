@@ -7,12 +7,12 @@ let component = new Component(wiz);
 let batch = component.new_batch(wiz);
     batch.start_frame = 0;
     // --ani one
-    let ani_one  = {begin : 0,final:700,increment : 100, comp_target : "x"};
+    let ani_one  = {begin : 0,final:700,increment : 1, comp_target : "x"};
     let animation_one = batch.add_animation(ani_one);
     animation_one.animate = IntInc;
     //-------------------
     // --ani two
-    let ani_two  = {begin : 0,final: 700,increment : 100, comp_target : "y"};
+    let ani_two  = {begin : 0,final: 700,increment : 1, comp_target : "y"};
     let animation_two = batch.add_animation(ani_two);
     animation_two.animate = IntInc;
     //-------------------
