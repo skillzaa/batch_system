@@ -1,4 +1,4 @@
-import get_app from "../wiz/get_app.js";
+import get_app from "./get_app.js";
 import Frame from "../frame/Frame.js";
 
 export default class Wiz {

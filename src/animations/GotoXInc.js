@@ -1,43 +1,29 @@
 
-export default class GotoXInc {
-constructor(data){
-    
-    this.renderer = data.renderer;
-    this.comp = data.comp;
-    this.stage = data.stage;
+export default function GotoXInc (aniabs , misc={}) {
 
-    //--this is X percentage
-    this.begin = ((this.renderer.width / 100) * data.begin) ;
-    this.final = ((this.renderer.width / 100) * data.final) ;
+    //--aniabs is X percentage
+    //---i can make it bounded with one line
+    // if (aniabs.final > 100) {aniabs.final = 100;}
+    aniabs.begin = ((aniabs.renderer.width / 100) * data.begin) ;
+    aniabs.final = ((aniabs.renderer.width / 100) * data.final) ;
+    aniabs.increment= data.increment;
+    //--aniabs will be always X
+    aniabs.comp_target = "x";
+    aniabs.current = aniabs.begin;
+}
 
-    this.increment= data.increment;
-    
-    //--this will be always X
-    this.component_target = "x";
-    //==============================
-//--these will just take of them selves
-    this.current = this.begin;
-}
-xbound_violated(){
-if (this.current > (this.renderer.width - this.comp.width) ){
-    return true;
-}else {
-    return false;
-}
-}
 animate (){
-    if (this.xbound_violated()){
-        return parseInt(this.current);
+    if (aniabs.xbound_violated()){
+        return parseInt(aniabs.current);
     }
     
-    if (this.current < this.final){
+    if (aniabs.current < aniabs.final){
             //--Increment
-            this.current += this.increment;
-        return parseInt(this.current);
+            aniabs.current += aniabs.increment;
+        return parseInt(aniabs.current);
         }else {
         //--just keep returning the last value
-        return parseInt(this.current);
+        return parseInt(aniabs.current);
     }
 
-}
 }
