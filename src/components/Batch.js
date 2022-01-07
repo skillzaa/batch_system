@@ -1,4 +1,3 @@
-import AnimationGenerator from "../animations/AnimationGenerator.js";
 import AniAbs from "../animations/AniAbs.js";
 
 export default class Batch {
