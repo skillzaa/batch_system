@@ -19,11 +19,11 @@ export default function compCon(item){
         stroke: '#000000',
         strokeThickness: 1
     });
-    // item.text_content = ;
-    const text = new PIXI.Text(item.text_content, style);
-    text.resolution = 4;
+    // item.title_text = ;
+    const title = new PIXI.Text(item.title_text, style);
+    title.resolution = 4;
 
-    let textMetrics = PIXI.TextMetrics.measureText(item.text_content, style);
+    let textMetrics = PIXI.TextMetrics.measureText(item.title_text, style);
     // console.log(textMetrics);
 
 //-------------------------------------------    
@@ -36,7 +36,7 @@ let rectangle = new PIXI.Graphics();
 //------------------------------------------------
 
     compcon.addChild(rectangle);
-    compcon.addChild(text);
+    compcon.addChild(title);
     return compcon;
 }
      

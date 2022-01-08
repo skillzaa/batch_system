@@ -7,11 +7,12 @@ import Wiz from "../wiz/Wiz.js";
 export default function get_wiz(title_text="Your Text"){
     let wiz = new Wiz();
     
-    let component = wiz.add_component();
+    let component = wiz.add_component({title_text : "Transmission..."});
     // component.
     component.comp.y = 20;
     component.comp.width = 500;
     component.comp.height = 120;
+    // component.comp.;
     let batch = component.add_batch();
         batch.start_frame = 0;
         // --ani one

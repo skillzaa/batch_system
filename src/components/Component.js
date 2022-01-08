@@ -13,7 +13,7 @@ this.comp = compCon({
     width:init_data.width || 100,
     height:init_data.height || 25,
     color: 0xffff00 ,
-    text_content:init_data.text_content || "Your Text Here.."
+    title_text:init_data.title_text || "Your Text Here.."
 });
 this.batches = [];
 //--from inital_data
