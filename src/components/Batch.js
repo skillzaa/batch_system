@@ -1,9 +1,12 @@
 import AniAbs from "../animations/AniAbs.js";
 
 export default class Batch {
-constructor(wiz,comp){
-this.wiz = wiz;    
-this.comp = comp;
+constructor(init_data){
+//--this for global use
+this.renderer = init_data.renderer;
+this.stage = init_data.stage;
+
+this.comp = init_data.comp;
 //--we can push them later or give it as argument
 this.animations = [];
 //--every sequence has to start at a specific frame and can not start before that-- this is the start time of -- set it once batch is created --MUST
@@ -15,8 +18,8 @@ this.stop_frame = 0;
 //-- Step 01:: create a brand new animation Base object add stage,renderer and comp into it
 //-- Step 02:: add this animation obj to the animations array and then send it back so that user can add into it.
 add_animation(ani_data={}){
-ani_data.stage = this.wiz.app.stage;    
-ani_data.renderer = this.wiz.app.renderer; 
+ani_data.stage = this.stage;    
+ani_data.renderer = this.renderer; 
 ani_data.comp = this.comp;
 let animation = new AniAbs(ani_data);
 this.animations.push(animation);

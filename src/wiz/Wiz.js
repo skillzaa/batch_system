@@ -1,9 +1,10 @@
 import get_app from "./get_app.js";
 import Frame from "../frame/Frame.js";
-
+import Component from "../components/Component.js";
 export default class Wiz {
 constructor(){
 this.app = get_app();
+this.glbl = "";
     // this.frame = new Frame();
 this.frame = new Frame();    
 this.components  = []; //add to this after creation
@@ -47,5 +48,16 @@ this.components.forEach(component =>{
 start(){
 this.app.ticker.add(this.update.bind(this));
 }
+add_component(init_data={}){
+ //--this for global use
+ init_data.renderer = this.app.renderer;
+ init_data.stage = this.app.stage;    
+let c = new Component(init_data);
+return c;
+}
 
+
+
+//////////////////////////////////////
+//////////////////////////////////////
 }//wiz

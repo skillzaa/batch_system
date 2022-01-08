@@ -1,4 +1,4 @@
-export default function rectangle(item){
+export default function compCon(item){
     let compcon = new PIXI.Container();
 //----------------------------------------
     const style = new PIXI.TextStyle({
@@ -19,11 +19,11 @@ export default function rectangle(item){
         stroke: '#000000',
         strokeThickness: 1
     });
-    let text_content = 'Welcome To Bilzaa2d';
-    const text = new PIXI.Text(text_content, style);
+    // item.text_content = ;
+    const text = new PIXI.Text(item.text_content, style);
     text.resolution = 4;
 
-    let textMetrics = PIXI.TextMetrics.measureText(text_content, style);
+    let textMetrics = PIXI.TextMetrics.measureText(item.text_content, style);
     // console.log(textMetrics);
 
 //-------------------------------------------    
