@@ -17,4 +17,4 @@ component.add_batch(batch);
 //-------------------
 return component;
 //-------------------
-}//get_comp
+}//get_compi

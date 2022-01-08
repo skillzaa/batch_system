@@ -6,17 +6,15 @@ import Wiz from "../wiz/Wiz.js";
 //every such fn shd have get_comp fn
 export default function get_wiz(){
     let wiz = new Wiz();
-let y = 0;    
-for (let i = 0; i < 7 ; i++) {
-   
     
     let component = new Component(wiz);
-    component.comp.y = y;
-
+    component.comp.y = 20;
+    component.comp.width = 500;
+    component.comp.height = 120;
     let batch = component.new_batch(wiz);
         batch.start_frame = 0;
         // --ani one
-        let ani_one  = {begin : 0,final: 50,increment : 5, comp_target : "x"};
+        let ani_one  = {begin : 0,final: 50,increment : 2, comp_target : "x"};
         let ani = batch.add_animation(ani_one);
         ///====== Uffffffffffffffff-------
         gotox(ani,"middle",true);
@@ -24,11 +22,11 @@ for (let i = 0; i < 7 ; i++) {
         component.add_batch(batch);
         //===============================
         wiz.components.push(batch);
-        y += 75;      
-}
 //===============================
 //===============================
 //===============================
+// var text = new PIXI.Text("Pixi.js can has text!", {font:"50px Arial", fill:"red"});
+// wiz.app.stage.addChild(text);
 //===============================
 return wiz;
 }//get_comp

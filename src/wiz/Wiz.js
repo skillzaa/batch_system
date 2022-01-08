@@ -22,7 +22,7 @@ add_components_to_stage(){
     this.components.forEach( c => {
     //--component is wiz component that is wrapper around pixi componenet (is placed in c.comp)    
     this.app.stage.addChild(c.comp);
-    });    
+    }); 
 }
 
 update(){

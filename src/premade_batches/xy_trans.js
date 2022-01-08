@@ -11,7 +11,7 @@ let batch = component.new_batch(wiz);
     let ani_one  = {begin : 0,final: 100,increment : 10, comp_target : "x"};
     let ani = batch.add_animation(ani_one);
     ///====== Uffffffffffffffff-------
-    gotox(ani,true);
+    gotox(ani,"left",true);
     //-------------------
     
     //-------------------
