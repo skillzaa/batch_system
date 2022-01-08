@@ -1,11 +1,12 @@
 import compCon from "./compcon.js";
 import Batch from "./Batch.js";
-
+import XY2screen from "./XY2screen.js"
 export default class Component {
 constructor(init_data={}){
 // super();    
 this.renderer = init_data.renderer;
 this.stage = init_data.stage;
+this.xy2screen = new XY2screen({renderer: this.renderer});
 this.name = init_data.name || "base_component";
 this.comp = compCon({
     x:init_data.x || 0,
