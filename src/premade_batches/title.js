@@ -14,7 +14,7 @@ export default function get_wiz(){
     let batch = component.new_batch(wiz);
         batch.start_frame = 0;
         // --ani one
-        let ani_one  = {begin : 0,final: 50,increment : 2, comp_target : "x"};
+        let ani_one  = {begin : 0,final: 50,increment : 4, comp_target : "x"};
         let ani = batch.add_animation(ani_one);
         ///====== Uffffffffffffffff-------
         gotox(ani,"middle",true);
