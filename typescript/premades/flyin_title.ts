@@ -4,8 +4,9 @@ import gotox from "../pre_translate/gotox.js";
 import Wiz from "../wiz/Wiz.js";
 
 //every such fn shd have get_comp fn
-export default function flyin_title(wiz,init_data={}){
-let title_text = init_data.title_text || "Your Text";    
+export default function flyin_title(wiz:Wiz,init_data={}){
+let title_text = init_data.title_text || "Your Text";  
+
     let component = wiz.add_component({title_text : title_text});
     // component.
     component.comp.y = 20;

@@ -3,8 +3,8 @@ import Frame from "../frame/Frame.js";
 import Component from "../components/Component.js";
 export default class Wiz {
     constructor() {
+        this.components = [];
         this.app = get_app();
-        this.glbl = "";
         // this.frame = new Frame();
         this.frame = new Frame();
         this.components = []; //add to this after creation
@@ -34,7 +34,7 @@ export default class Wiz {
     }
     end() {
         this.app.ticker.stop();
-        console.log("video ended");
+        console.log("stopped");
     }
     update_components() {
         //--no need to check if comp has start_frame or not just a complication    

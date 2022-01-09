@@ -2,43 +2,45 @@ import get_app from "./get_app.js";
 import Frame from "../frame/Frame.js";
 import Component from "../components/Component.js";
 export default class Wiz {
+private frame:Frame; 
+private components : Component [] = [];
+private app:any; ///----->???????   
 constructor(){
 this.app = get_app();
-this.glbl = "";
     // this.frame = new Frame();
 this.frame = new Frame();    
 this.components  = []; //add to this after creation
 // this.init();
 }
-init(){
+init():boolean {
     // console.log(this.app.stage.width);
     this.append_app_to_body();
     this.add_components_to_stage();
     return true;
 }
-append_app_to_body(){
+private append_app_to_body():void{
 document.body.appendChild(this.app.view);
 }
-add_components_to_stage(){
+private add_components_to_stage():void{
     this.components.forEach( c => {
     //--component is wiz component that is wrapper around pixi componenet (is placed in c.comp)    
     this.app.stage.addChild(c.comp);
     }); 
 }
 
-update(){
+update():void{
     // place values in update_components 
     this.update_components();
     // more updates here
     //----update runners
     //-- update background
 }
-end(){
+end():void{
 this.app.ticker.stop();
-console.log("video ended");
+console.log("stopped");
 }
 
-update_components(){
+private update_components(){
 //--no need to check if comp has start_frame or not just a complication    
 this.frame.frame_cur += 1;    
 this.components.forEach(component =>{
@@ -56,8 +58,5 @@ let c = new Component(init_data);
 return c;
 }
 
-
-
-//////////////////////////////////////
 //////////////////////////////////////
 }//wiz

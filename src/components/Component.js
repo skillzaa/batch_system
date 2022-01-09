@@ -1,6 +1,7 @@
 import compCon from "./compcon.js";
 import Batch from "./Batch.js";
 import XY2screen from "./XY2screen.js";
+
 export default class Component {
     constructor(init_data = {}) {
         // super();    
