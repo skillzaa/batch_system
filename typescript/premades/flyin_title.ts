@@ -7,8 +7,9 @@ import Wiz from "../wiz/Wiz.js";
 export default function flyin_title(wiz:Wiz,init_data={}){
 let title_text = init_data.title_text || "Your Text";  
 
-    let component = wiz.add_component({title_text : title_text});
+    let component = wiz.add_component();
     // component.
+    component.title_text = title_text;
     component.comp.y = 20;
     component.comp.width = 500;
     component.comp.height = 120;

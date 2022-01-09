@@ -1,12 +1,12 @@
 import compCon from "./compcon.js";
 import Batch from "./Batch.js";
 import XY2screen from "./XY2screen.js";
-
 export default class Component {
     constructor(init_data = {}) {
+        this.batches = [];
         // super();    
         this.renderer = init_data.renderer;
-        this.stage = init_data.stage;
+        // this.stage = init_data.stage;
         this.xy2screen = new XY2screen({ renderer: this.renderer });
         this.name = init_data.name || "base_component";
         this.comp = compCon({
@@ -28,10 +28,11 @@ export default class Component {
             }
         });
     }
+    //--init data just pass through
     add_batch(init_data = {}) {
         //--this for global use
         init_data.renderer = this.renderer;
-        init_data.stage = this.stage;
+        //  init_data.stage = this.stage; 
         init_data.comp = this.comp;
         let batch = new Batch(init_data);
         //----importantto

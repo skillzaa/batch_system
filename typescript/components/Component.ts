@@ -1,11 +1,22 @@
 import compCon from "./compcon.js";
 import Batch from "./Batch.js";
 import XY2screen from "./XY2screen.js"
+import {create_component_data} from "../internal_data/create_component_data.js";
+import { Renderer,Stage,App } from "../../assets/pixi.js";
+
+
 export default class Component {
-constructor(init_data={}){
+private batches: Batch [] = [];
+private xy2screen: XY2screen;
+private comp:any;
+public name: string;
+public renderer : Renderer;
+private stage:Stage;
+
+constructor(init_data:create_component_data={}){
 // super();    
 this.renderer = init_data.renderer;
-this.stage = init_data.stage;
+// this.stage = init_data.stage;
 this.xy2screen = new XY2screen({renderer: this.renderer});
 this.name = init_data.name || "base_component";
 this.comp = compCon({
@@ -27,10 +38,11 @@ update(frame){
         }
     });
 }
+//--init data just pass through
 add_batch(init_data={}){
  //--this for global use
  init_data.renderer = this.renderer;
- init_data.stage = this.stage; 
+//  init_data.stage = this.stage; 
  init_data.comp = this.comp;   
 let batch = new Batch(init_data);
 //----importantto

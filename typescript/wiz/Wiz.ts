@@ -1,10 +1,12 @@
 import get_app from "./get_app.js";
 import Frame from "../frame/Frame.js";
 import Component from "../components/Component.js";
+
 export default class Wiz {
 private frame:Frame; 
 private components : Component [] = [];
 private app:any; ///----->???????   
+
 constructor(){
 this.app = get_app();
     // this.frame = new Frame();
