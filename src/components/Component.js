@@ -20,6 +20,13 @@ this.batches = [];
 //--from inital_data
 // this.agfs = get_class_agfs(this.name);
 }
+update(frame){
+    this.batches.forEach(batch =>{
+        if (batch.start_frame < frame){
+            batch.update();
+        }
+    });
+}
 add_batch(init_data={}){
  //--this for global use
  init_data.renderer = this.renderer;
@@ -28,30 +35,8 @@ add_batch(init_data={}){
 let batch = new Batch(init_data);
 return batch;    
 }
-// add_batch(batch){
-// //------------Creating Batch    
-// // batch.start_frame = start_frame;
-//  //Now we are in component so no more component.comp that  is an anit pattern. 
-// batch.comp = this.comp;
-// this.batches.push(batch);
-// }
-// --IMPORTANT--WITH IN ONE BATCH YOU CAN NOT HAVE 2 ANIMATION ON SAME VALUE E.G 2 ANIMATIONS FOR X OR Y
-update(frame){
-    this.batches.forEach(batch =>{
-        if (batch.start_frame < frame){
-            batch.update();
-        }
-    });
-}
 
-// is_batch_completed(batch_number){ 
-//  try{
-// return this.batches[batch_number-1].is_completed();  
-//  }catch (err){
-//      console.log(err);
-//      return false;
-//  }   
-// }    
+
 //------------------------    
 }//base comp
      
