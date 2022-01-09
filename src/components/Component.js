@@ -33,6 +33,8 @@ add_batch(init_data={}){
  init_data.stage = this.stage; 
  init_data.comp = this.comp;   
 let batch = new Batch(init_data);
+//----importantto
+this.batches.push(batch);
 return batch;    
 }
 

@@ -3,7 +3,7 @@ import flyin_bullet_point from "../premades/flyin_item/flyin_bullet_point.js";
 
 //========API======
 let init_data = {};
-init_data.start_frame = 200;
+init_data.start_frame = 20;
 init_data.title_text = "from api";
 init_data.width = 350;
 init_data.height = 90;
