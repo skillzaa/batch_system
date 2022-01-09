@@ -13,6 +13,7 @@ component.comp.y = component.xy2screen.y(y);
 component.comp.width = init_data.width || 500;
 component.comp.height = init_data.height || 120;
 component.comp.title_text  = init_data.title_text || "Your Text";    
+// component.comp.children[1]._texttitle_text  = init_data.title_text || "Your Text";    
 
 
 // component.comp.;

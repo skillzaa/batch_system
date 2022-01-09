@@ -9,6 +9,7 @@ export default function flyin_bullet_point(wiz, init_data = {}) {
     component.comp.width = init_data.width || 500;
     component.comp.height = init_data.height || 120;
     component.comp.title_text = init_data.title_text || "Your Text";
+    // component.comp.children[1]._texttitle_text  = init_data.title_text || "Your Text";    
     // component.comp.;
     let batch = component.add_batch();
     batch.start_frame = init_data.start_frame || 0;

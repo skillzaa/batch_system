@@ -1,7 +1,7 @@
+// import CompCon from "./CompCon.js";
 import compCon from "./compcon.js";
 import Batch from "./Batch.js";
 import XY2screen from "./XY2screen.js"
-import {create_component_data} from "../internal_data/create_component_data.js";
 import { Renderer,Stage,App } from "../../assets/pixi.js";
 
 
@@ -13,7 +13,7 @@ public name: string;
 public renderer : Renderer;
 private stage:Stage;
 
-constructor(init_data:create_component_data={}){
+constructor(init_data={}){
 // super();    
 this.renderer = init_data.renderer;
 // this.stage = init_data.stage;
