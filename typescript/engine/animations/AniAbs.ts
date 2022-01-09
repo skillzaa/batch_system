@@ -1,10 +1,10 @@
 import { Renderer } from "../../../assets/pixi.js";
 
 export default class  AniAbs {
-private begin:number = 0;    
-private final:number = 100;    
-private increment:number = 1;    
-private current:number = 0;    
+public begin:number = 0;    
+public final:number = 100;    
+public increment:number = 1;    
+public current:number = 0;    
 public comp_target:string = "x";    
 private renderer: Renderer;
 private agf_data:{}={};

@@ -7,7 +7,8 @@ export default class Wiz {
         this.app = get_app();
         // this.frame = new Frame();
         this.frame = new Frame();
-        this.components = []; //add to this after creation
+        this.components = [];
+        //add to this after creation
         // this.init();
     }
     init() {
@@ -46,11 +47,13 @@ export default class Wiz {
     start() {
         this.app.ticker.add(this.update.bind(this));
     }
-    add_component(init_data = {}) {
-        //--this for global use
+    add_component() {
+        let init_data = {};
         init_data.renderer = this.app.renderer;
         init_data.stage = this.app.stage;
         let c = new Component(init_data);
+        //==importantay
+        this.components.push(c);
         return c;
     }
 } //wiz

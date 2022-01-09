@@ -1,8 +1,8 @@
 export default class AniAbs {
-    private begin;
-    private final;
-    private increment;
-    private current;
+    begin: number;
+    final: number;
+    increment: number;
+    current: number;
     comp_target: string;
     private renderer;
     private agf_data;

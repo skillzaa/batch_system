@@ -29,10 +29,9 @@ export default class Component {
         });
     }
     //--init data just pass through
-    add_batch(init_data = {}) {
-        //--this for global use
+    add_batch() {
+        let init_data = {};
         init_data.renderer = this.renderer;
-        //  init_data.stage = this.stage; 
         init_data.comp = this.comp;
         let batch = new Batch(init_data);
         //----importantto

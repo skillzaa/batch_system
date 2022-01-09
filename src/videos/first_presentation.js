@@ -1,5 +1,5 @@
 import Wiz from "../engine/Wiz.js";
-import flyin_bullet_point from "../premades/flyin_item/flyin_bullet_point.js";
+import flyin_bullet_point from "./flyin_bullet_point.js";
 //========API======
 let init_data = {};
 init_data.start_frame = 20;

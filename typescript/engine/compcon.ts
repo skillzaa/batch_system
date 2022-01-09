@@ -17,7 +17,6 @@ export default function compCon(item){
         miterLimit: 36,
         // stroke: "#0c0c0d",
         stroke: '#000000',
-        strokeThickness: 1
     });
     // item.title_text = ;
     const title = new PIXI.Text(item.title_text, style);

@@ -10,6 +10,6 @@ export default class Component {
     private stage;
     constructor(init_data?: create_component_data);
     update(frame: any): void;
-    add_batch(init_data?: {}): Batch;
+    add_batch(): Batch;
 }
 //# sourceMappingURL=Component.d.ts.map

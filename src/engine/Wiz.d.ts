@@ -11,6 +11,6 @@ export default class Wiz {
     end(): void;
     private update_components;
     start(): void;
-    add_component(init_data?: {}): Component;
+    add_component(): Component;
 }
 //# sourceMappingURL=Wiz.d.ts.map
