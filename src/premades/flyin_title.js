@@ -1,4 +1,4 @@
-import IntInc from "../animations/IntInc.js";
+import IntInc from "../engine/animations/IntInc.js";
 import gotox from "../pre_translate/gotox.js";
 //every such fn shd have get_comp fn
 export default function flyin_title(wiz, init_data = {}) {

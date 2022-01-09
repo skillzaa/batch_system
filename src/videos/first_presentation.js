@@ -1,4 +1,4 @@
-import Wiz from "../wiz/Wiz.js";
+import Wiz from "../engine/Wiz.js";
 import flyin_bullet_point from "../premades/flyin_item/flyin_bullet_point.js";
 //========API======
 let init_data = {};

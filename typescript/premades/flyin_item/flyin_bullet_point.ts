@@ -1,8 +1,8 @@
-import Component from "../../components/Component.js";
-import IntInc from "../../animations/IntInc.js";
+import Component from "../../engine/Component.js";
+import IntInc from "../../engine/animations/IntInc.js";
 import gotox from "../../pre_translate/gotox.js";
 import gotoy from "../../pre_translate/gotoy.js";
-import Wiz from "../../wiz/Wiz.js";
+import Wiz from "../../engine/Wiz.js";
 
 //every such fn shd have get_comp fn
 export default function flyin_bullet_point(wiz,init_data = {}) {

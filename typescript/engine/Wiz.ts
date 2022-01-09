@@ -1,6 +1,6 @@
 import get_app from "./get_app.js";
-import Frame from "../frame/Frame.js";
-import Component from "../components/Component.js";
+import Frame from "./Frame.js";
+import Component from "./Component.js";
 
 export default class Wiz {
 private frame:Frame; 
@@ -51,7 +51,7 @@ this.components.forEach(component =>{
 }
 start(){
 this.app.ticker.add(this.update.bind(this));
-}
+}    
 add_component(init_data={}){
  //--this for global use
  init_data.renderer = this.app.renderer;

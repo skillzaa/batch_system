@@ -1,4 +1,4 @@
-import AniAbs from "../animations/AniAbs.js";
+import AniAbs from "./animations/AniAbs.js";
 import { Renderer } from "../../assets/pixi.js";
      
 export default class Batch {

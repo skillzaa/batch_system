@@ -1,1 +1,1 @@
-{"version":3,"file":"first_presentation.d.ts","sourceRoot":"","sources":["../../typescript/videos/first_presentation.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,eAAe,CAAC;AAiBhC,MAAM,CAAC,OAAO,UAAU,kBAAkB,QAqBzC"}
+{"version":3,"file":"first_presentation.d.ts","sourceRoot":"","sources":["../../typescript/videos/first_presentation.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,kBAAkB,CAAC;AAiBnC,MAAM,CAAC,OAAO,UAAU,kBAAkB,QAqBzC"}

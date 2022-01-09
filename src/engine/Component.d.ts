@@ -1,4 +1,4 @@
-import Batch from "../engine/Batch.js";
+import Batch from "./Batch.js";
 import { create_component_data } from "../internal_data/create_component_data.js";
 import { Renderer } from "../../assets/pixi.js";
 export default class Component {

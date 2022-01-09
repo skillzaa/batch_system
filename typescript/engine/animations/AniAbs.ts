@@ -1,4 +1,4 @@
-import { Renderer } from "../../assets/pixi.js";
+import { Renderer } from "../../../assets/pixi.js";
 
 export default class  AniAbs {
 private begin:number = 0;    
