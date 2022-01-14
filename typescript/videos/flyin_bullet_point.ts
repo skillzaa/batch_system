@@ -9,12 +9,14 @@ export default function flyin_bullet_point(wiz:Wiz,init_data = {}) {
     // component.
 let component = wiz.add_component();
 let y = init_data.y || 20;
-component.comp.y = component.xy2screen.y(y);
-component.comp.width = init_data.width || 500;
-component.comp.height = init_data.height || 120;
-component.comp.title_text  = init_data.title_text || "Your Text";    
-console.log("component.comp.children[1]",component.comp.children[1]);
-component.comp.children[1]._text = "&&^%$$"; 
+component.y = component.xy2screen.y(y);
+component.width = init_data.width || 500;
+component.height = init_data.height || 120;
+component.title_text  = "This should be on screen";  
+
+component.init();
+// console.log("component.comp.children[1]",component.comp.children[1]);
+// component.comp.children[1]._text = "&&^%$$"; 
 // component.comp.children[1]._texttitle_text  = init_data.title_text || "Your Text";    
 
 

@@ -8,6 +8,7 @@ export default class Component {
     renderer: Renderer;
     private stage;
     constructor(init_data?: {});
+    init(): void;
     update(frame: any): void;
     add_batch(): Batch;
 }

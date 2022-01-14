@@ -19,7 +19,6 @@ export default function compCon(item){
         stroke: '#000000',
     });
     const title = new PIXI.Text(item.title_text, style);
-
 //-----------------------------
 title.resolution = 4;
 

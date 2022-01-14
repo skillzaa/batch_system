@@ -10,17 +10,27 @@ export default class Component {
         // this.stage = init_data.stage;
         this.xy2screen = new XY2screen({ renderer: this.renderer });
         this.name = init_data.name || "base_component";
-        this.comp = compCon({
-            x: init_data.x || 0,
-            y: init_data.y || 0,
-            width: init_data.width || 100,
-            height: init_data.height || 25,
-            color: 0xffff00,
-            title_text: init_data.title_text || "Your Text Here.."
-        });
+        // this.comp = compCon({
+        this.x = init_data.x || 0;
+        this.y = init_data.y || 0;
+        this.width = init_data.width || 100;
+        this.height = init_data.height || 25;
+        this.color = 0xffff00;
+        this.title_text = init_data.title_text || "Your TextHere..";
+        // });
         this.batches = [];
         //--from inital_data
         // this.agfs = get_class_agfs(this.name);
+    }
+    init() {
+        this.comp = compCon({
+            x: this.x || 0,
+            y: this.y || 0,
+            width: this.width || 100,
+            height: this.height || 25,
+            color: 0xffff00,
+            title_text: this.title_text || "Your Text Here.."
+        });
     }
     update(frame) {
         this.batches.forEach(batch => {
